@@ -1,0 +1,51 @@
+Return-Path: <briennefan@openmailbox.org>
+Delivered-To: peter1983@openmailbox.org
+Received: from h1 ([10.91.130.41])
+	by h9 (Dovecot) with LMTP id wOHGOtjevFd9ewAAcPMVCw
+	for <peter1983@openmailbox.org>; Wed, 24 Aug 2016 01:40:16 +0200
+Received: from mail2.openmailbox.org ([10.91.130.41])
+	by h1 (Dovecot) with LMTP id I3DlNrPevFdsJgAAFts0Rw
+	; Wed, 24 Aug 2016 01:40:16 +0200
+Received: by mail2.openmailbox.org (Postfix, from userid 1001)
+	id D3C96105AA7; Wed, 24 Aug 2016 01:40:16 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=openmailbox.org;
+	s=openmailbox; t=1471995616;
+	bh=jqpQ9KqC62D6u/YaIFBbIRrFU3ERcAr330KHrXfXzAM=;
+	h=Date:From:To:Subject:In-Reply-To:References:From;
+	b=oajjd9Dz9oFBdeOvFiF/2s2bm4CFNfHslbYxF5ceNG8r3IDprPL3EnyatTOpGKVQ1
+	 3GyZMrCLPBCu7ReyLWQlkRsxVElX/1c/5IcNbBkfHRsxayaI6+XWh2rzv1LWdebZZR
+	 G+olG+5nTjz8jAHHqeR7oX+PRUWtqphyvGRx0Ckk=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on h4
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED autolearn=no
+	autolearn_force=no version=3.4.0
+Received: from www.openmailbox.org (unknown [10.91.130.51])
+	by mail2.openmailbox.org (Postfix) with ESMTP id A515B105ACC
+	for <peter1983@openmailbox.org>; Wed, 24 Aug 2016 01:40:15 +0200 (CEST)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII;
+ format=flowed
+Content-Transfer-Encoding: 7bit
+Date: Wed, 24 Aug 2016 01:40:15 +0200
+From: briennefan@openmailbox.org
+To: Peter <peter1983@openmailbox.org>
+Subject: Re: Nice =?UTF-8?Q?date=3F?=
+In-Reply-To: <20160824013646.0000678a@openmailbox.org>
+References: <20160824013646.0000678a@openmailbox.org>
+Message-ID: <45085e74dba2580471ff734f4e6c8a84@openmailbox.org>
+X-Sender: briennefan@openmailbox.org
+User-Agent: Roundcube Webmail/1.0.6
+
+I'm ok with that :)
+I also think, that it was a date :)
+
+But it should be a thing between us two and we should keep it as a 
+secret at work. ;)
+
+On 2016-08-24 01:36, Peter wrote:
+> Hey,
+> 
+> it felt like one, hope do not take it wrong, that I call our meeting a
+> date.
+> 
+

@@ -1,0 +1,98 @@
+4 digits - lower-case
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 13711 (VeraCrypt RIPEMD160 + XTS 512 bit (legacy))
+Hash.Target......: ./lower-case_4/container_12305812.hc
+Time.Started.....: Sun Oct  8 15:44:14 2023 (12 mins, 37 secs)
+Time.Estimated...: Sun Oct  8 15:56:51 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Mask.......: ?l?l?l?l [4]
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      411 H/s (48.04ms) @ Accel:1024 Loops:500 Thr:256 Vec:1
+Recovered........: 1/1 (100.00%) Digests (total), 1/1 (100.00%) Digests (new)
+Progress.........: 310852/456976 (68.02%)
+Rejected.........: 0/310852 (0.00%)
+Restore.Point....: 262144/456976 (57.36%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:655000-655330
+Candidate.Engine.: Host Generator + PCIe
+Candidates.#1....: hwxp -> yfpn
+Hardware.Mon.#1..: Temp: 67c Fan: 53% Util:100% Core:1860MHz Mem:3802MHz Bus:16
+
+Started: Sun Oct  8 15:43:44 2023
+Stopped: Sun Oct  8 15:56:51 2023
+
+
+4 digits - numbers
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 13711 (VeraCrypt RIPEMD160 + XTS 512 bit (legacy))
+Hash.Target......: ./numbers_4/container_12305812.hc
+Time.Started.....: Sun Oct  8 15:57:17 2023 (26 secs)
+Time.Estimated...: Sun Oct  8 15:57:43 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Mask.......: ?d?d?d?d [4]
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      397 H/s (9.20ms) @ Accel:128 Loops:1000 Thr:512 Vec:1
+Recovered........: 1/1 (100.00%) Digests (total), 1/1 (100.00%) Digests (new)
+Progress.........: 10000/10000 (100.00%)
+Rejected.........: 0/10000 (0.00%)
+Restore.Point....: 5000/10000 (50.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:655000-655330
+Candidate.Engine.: Host Generator + PCIe
+Candidates.#1....: 1236 -> 6883
+Hardware.Mon.#1..: Temp: 66c Fan: 52% Util: 98% Core:1860MHz Mem:3802MHz Bus:16
+
+Started: Sun Oct  8 15:56:51 2023
+Stopped: Sun Oct  8 15:57:44 2023
+
+
+5 digits - numbers
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 13711 (VeraCrypt RIPEMD160 + XTS 512 bit (legacy))
+Hash.Target......: ./numbers_5/container_12305812.hc
+Time.Started.....: Sun Oct  8 15:58:10 2023 (1 min, 9 secs)
+Time.Estimated...: Sun Oct  8 15:59:19 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Mask.......: ?d?d?d?d?d [5]
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      363 H/s (25.88ms) @ Accel:512 Loops:500 Thr:256 Vec:1
+Recovered........: 1/1 (100.00%) Digests (total), 1/1 (100.00%) Digests (new)
+Progress.........: 25000/100000 (25.00%)
+Rejected.........: 0/25000 (0.00%)
+Restore.Point....: 0/100000 (0.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:655000-655330
+Candidate.Engine.: Host Generator + PCIe
+Candidates.#1....: 12345 -> 68822
+Hardware.Mon.#1..: Temp: 66c Fan: 50% Util: 99% Core:1860MHz Mem:3802MHz Bus:16
+
+Started: Sun Oct  8 15:57:44 2023
+Stopped: Sun Oct  8 15:59:21 2023
+
+
+4 digits - special
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 13711 (VeraCrypt RIPEMD160 + XTS 512 bit (legacy))
+Hash.Target......: container_12305812.hc
+Time.Started.....: Sun Oct  8 17:55:50 2023 (38 mins, 17 secs)
+Time.Estimated...: Sun Oct  8 18:34:07 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Mask.......: ?s?s?s?s [4]
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      399 H/s (30.19ms) @ Accel:128 Loops:250 Thr:512 Vec:1
+Recovered........: 1/1 (100.00%) Digests (total), 1/1 (100.00%) Digests (new)
+Progress.........: 917504/1185921 (77.37%)
+Rejected.........: 0/917504 (0.00%)
+Restore.Point....: 851968/1185921 (71.84%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:655250-655330
+Candidate.Engine.: Host Generator + PCIe
+Candidates.#1....: -$ [ -> (/%[
+Hardware.Mon.#1..: Temp: 69c Fan: 54% Util: 99% Core:1847MHz Mem:3802MHz Bus:16
+
+Started: Sun Oct  8 17:55:28 2023
+Stopped: Sun Oct  8 18:34:08 2023

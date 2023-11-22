@@ -1,0 +1,59 @@
+Return-Path: <briennefan@openmailbox.org>
+Delivered-To: peter1983@openmailbox.org
+Received: from h1 ([10.91.130.41])
+	by h9 (Dovecot) with LMTP id DS9pHM7cvFe/WgAAcPMVCw
+	for <peter1983@openmailbox.org>; Wed, 24 Aug 2016 01:31:51 +0200
+Received: from mail2.openmailbox.org ([10.91.130.41])
+	by h1 (Dovecot) with LMTP id 8tDNI4TcvFdHDwAAFts0Rw
+	; Wed, 24 Aug 2016 01:31:51 +0200
+Received: by mail2.openmailbox.org (Postfix, from userid 1001)
+	id BD746105AAD; Wed, 24 Aug 2016 01:31:51 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=openmailbox.org;
+	s=openmailbox; t=1471995111;
+	bh=8IehoCj0SFEtorsgaTbLVJ/UVUm1jdncHlJRWoMxNrg=;
+	h=Date:From:To:Subject:In-Reply-To:References:From;
+	b=kYjLqwPyHGnyK4TcoHbFZW+K5IYzJzbmmvqqKb7T8SmABj+s+/3XxBmGdqHiKqxAs
+	 dr8O5efCLvSASTirjKTMOa+qZe1G7g8+z95JGDchfp5BO+g5lN+z8jpTqWrJFbQmCG
+	 U7B077oHihQ5f57cWkPB3zMAwW90mqg0znn2BTyg=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on h4
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED,URIBL_BLOCKED
+	autolearn=no autolearn_force=no version=3.4.0
+Received: from www.openmailbox.org (unknown [10.91.130.55])
+	by mail2.openmailbox.org (Postfix) with ESMTP id 86FA2105AA6
+	for <peter1983@openmailbox.org>; Wed, 24 Aug 2016 01:31:50 +0200 (CEST)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII;
+ format=flowed
+Content-Transfer-Encoding: 7bit
+Date: Wed, 24 Aug 2016 01:31:50 +0200
+From: briennefan@openmailbox.org
+To: Peter <peter1983@openmailbox.org>
+Subject: Re: Greetz :)
+In-Reply-To: <20160824012841.000006eb@openmailbox.org>
+References: <d570bbe0fbfa3691bb0c04b34c20b88d@openmailbox.org>
+ <20160824012841.000006eb@openmailbox.org>
+Message-ID: <8ed05adf761ad91b9725ffd441a3d1a0@openmailbox.org>
+X-Sender: briennefan@openmailbox.org
+User-Agent: Roundcube Webmail/1.0.6
+X-Antivirus: avast! (VPS 160823-1, 23.08.2016), Inbound message
+X-Antivirus-Status: Clean
+
+Yeah no problem at all.
+Say, do you want to go for a drink someday? ;)
+
+
+On 2016-08-24 01:28, Peter wrote:
+> Hey,
+> 
+> nice! Puh the traffic today was terrible...
+> Hope you had a nice ride. :)
+> 
+> Am Wed, 24 Aug 2016 00:48:30 +0200
+> schrieb briennefan@openmailbox.org:
+> 
+>> Hihi
+>> 
+>> Hi Peter, now we can chat. ;)
+> 
+> 
