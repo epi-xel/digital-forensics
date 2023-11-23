@@ -22,6 +22,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{booktabs}
 \usepackage{amsmath}
+\usepackage{csquotes}
 \usepackage[backend=biber, sorting=none]{biblatex}
 \usepackage[a4paper,width=160mm,top=25mm,bottom=25mm]{geometry}
 
@@ -68,7 +69,7 @@ For this analysis, I utilized the following software:
 
 \begin{itemize}
     \item \textbf{Autopsy} \cite{autopsy} -- version 1.24 (update 7); to perform container mounting and access.
-    %\item \textbf{Qemu} \cite{qemu}; to convert the image from qcow format to raw format.
+    \item \textbf{Qemu} \cite{qemu}; to convert the image from qcow format to raw format.
     \item \textbf{PhotoRec} \cite{photorec} -- version 6.2.6; to perform file carving. 
     \item \textbf{TeslaDecrypter} \cite{tesla-decrypt}; to decrypt the files encrypted by the ransomware TeslaCrypt.
 \end{itemize}
@@ -92,7 +93,7 @@ For this analysis, I utilized the following software:
 
 \subsection{Initial setup}
 
-%First, I had to convert the image from qcow format to raw format, which is supported by the utilized tool, using Qemu.
+First, I had to convert the image from qcow format to raw format, which is supported by the utilized tool, using Qemu.
 
 Then, I analized the image using Autopsy. After a first analysis, I performed file carving using PhotoRec on the unallocated space of the image.
 
@@ -122,7 +123,7 @@ You can find more details in Table \ref{table:stats}.
 
 After a deep analysis of the file system, I found numerous files linked to tutorials about games and game design, with a lot of examples of concept arts. 
 
-Moreover, analyzing web history, I found out that Peter has visited numerous website to find a way to hide files on his computer. 
+Moreover, analyzing web history, I found out that Peter has visited numerous websites to find a way to hide files on his computer. 
 
 \subsection{Notable files}
 
@@ -137,6 +138,9 @@ The major evidence that I found is the following e-mail exchanges between Peter 
 \paragraph{First email exchange}
 \label{sec:first-mail}
 
+The following e-mail exchange is the first one in time between Peter and Iris, where they are planning a date.
+
+\begin{shaded}
 \begin{verbatim}
 >> Hihi
 >> 
@@ -154,9 +158,12 @@ On 2016-08-24 01:28, Peter wrote:
 Yeah no problem at all.
 Say, do you want to go for a drink someday? ;)
 \end{verbatim}
+\end{shaded}
 
 \paragraph{Second email exchange}
+The following e-mail exchange is the second one in time between Peter and Iris, where they are talking about a date they had.
 
+\begin{shaded}
 \begin{verbatim}
 On 2016-08-24 01:36, Peter wrote:
 > Hey,
@@ -170,9 +177,12 @@ I also think, that it was a date :)
 But it should be a thing between us two and we should keep it as a 
 secret at work. ;)
 \end{verbatim}
+\end{shaded}
 
 \paragraph{Third email exchange}
+The following e-mail exchange is the third one in time between Peter and Iris, where Peter is asking Iris about some design concepts of Sabrina.
 
+\begin{shaded}
 \begin{verbatim}
 > >> >> Hey, can you do me a favor?
 > >> >> you seen some design concepts of Sabrina?
@@ -204,9 +214,12 @@ schrieb briennefan@openmailbox.org:
 
 Uhm ok, I'll look what I can do for you :)
 \end{verbatim}
+\end{shaded}
 
 \paragraph{Fourth email exchange}
+This is the last e-mail exchange between Peter and Iris, where Peter is asking Iris about the leak of information.
 
+\begin{shaded}
 \begin{verbatim}
 Date: Wed, 24 Aug 2016 02:01:36 +0200
 From: Peter <peter1983@openmailbox.org>
@@ -221,11 +234,15 @@ Iris, I don't want to discuss this at Work.
 
 Peter
 \end{verbatim}
+\end{shaded}
 For further analysis on the mail exchange, see Section \ref{sec:mail}.
 
 \subsubsection{Concept art}
 
-I found a photo of a concept art, which is shown in Figure \ref{fig:nina}. Analysis of the picture is shown in Section \ref{sec:art}.
+I found a photo of a concept art, which is shown in Figure \ref{fig:nina}.
+This file was found in 3 different situations: one as deleted file, one as encrypted file (see Section \ref{sec:malware}) and only the last one as a normal file which could be opened.
+
+Analysis of the picture is shown in Section \ref{sec:art}.
 
 \begin{figure}[!ht]
     \centering
@@ -234,11 +251,64 @@ I found a photo of a concept art, which is shown in Figure \ref{fig:nina}. Analy
     \label{fig:nina}
 \end{figure}
 
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{ll}
+    \toprule
+        \textbf{Content} & \textbf{SHA-1} \\
+        \midrule
+        Nina concept art & \texttt{98296EF2B0A297A323EA36CA7E5C31399D412D91} \\
+        1st email exchange with Iris & \texttt{7CCB4BF11E4601E9DCFC1821F286CF673DA4142E} \\
+        2nd email exchange with Iris & \texttt{74D1A62DCB6332BD1215083B99FB0A92F95CDDE4} \\
+        3rd email exchange with Iris & \texttt{3486BE7A44BA05D0EED985881C38C2DC226CC4E5} \\
+        4th email exchange with Iris & \texttt{E08A6FCED0D464E55C4C4357164B4258E9F634B9} \\
+    \bottomrule
+    \end{tabular}
+    \caption{Checksums of the most important files for evidence.}
+    \label{table:sha1}
+\end{table}
+
 \subsection{Malware traces}
 
-In addition of the files mentioned above, I found a lot of files with the extension \texttt{.mp3}, which were all encrypted.
-As confirmation of this, I found the following e-mail exchange between Peter and the tech support:
+In addition of the files mentioned above, I found a great amount of files with the extension \texttt{.mp3}, which were all encrypted. They were in different location, but all of them were in private folders of Peter and looked like personal files.
+The files mentioned are the following (see Table \ref{table:sha1-malware} for the checksums):
+\begin{itemize} 
+    \itemsep-0.5em 
+    \item \texttt{Fallen\_Champions\_concept\_art\_3.jpg.mp3}
+    \item \texttt{Fungus-Documentation.pdf.mp3}
+    \item \texttt{IMG\_20160823\_130922.jpg.mp3}
+    \item \texttt{Leonard\_Nimoy\_William\_Shatner\_Star\_Trek\_1968.JPG.mp3}
+    \item \texttt{monster\_concept\_art\_vii\_by\_d\_faultx.jpg.mp3}
+    \item \texttt{myrating.csv.mp3}
+    \item \texttt{passwords.docx.mp3}
+    \item \texttt{unityassetstoreguide.pdf.mp3}
+    \item \texttt{contactdata.csv.mp3}
+\end{itemize}
 
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{ll}
+    \toprule
+    \textbf{Content} & \textbf{SHA-1} \\
+    \midrule
+    \texttt{Fallen\_Champions\_concept\_art\_3} & \texttt{457598C7417C909EEA12756E8DA5775311627B36} \\
+    \texttt{Fungus-Documentation} & \texttt{DE51A21FBF86F8A840F9E44FB9CCB1986B31ECFD} \\
+    \texttt{IMG\_20160823\_130922} & \texttt{98296EF2B0A297A323EA36CA7E5C31399D412D91} \\
+    \texttt{Leonard\_Nimoy\_William\textelp{}} & \texttt{E02A76764D9DF6EACA8A237A74E1A5E6EC35C356} \\
+    \texttt{monster\_concept\_art\_vii\textelp{}} & \texttt{6BB17DAF3AF58C660D50C47D2CA0CB0A0F32BD96} \\
+    \texttt{myrating} & \texttt{8C08911E7C740AC2A4E15F876DACFE7C4846D2DE} \\
+    \texttt{passwords} & \texttt{11473175A82EF96BF0588BFC5308FD787A7FC17F} \\
+    \texttt{unityassetstoreguide} & \texttt{A6BDBA728EBC450CE7353596C460543094DC5196} \\
+    \texttt{contactdata3} & \texttt{AD862FCC026E81639E15033DD886EC09CB46CB14} \\
+    \bottomrule
+    \end{tabular}
+    \caption{Checksums of the files encrypted by the malware.}
+    \label{table:sha1-malware}
+\end{table}
+
+As confirmation of this anomaly, I found an e-mail from Peter to tech support, signaling this weird behavior of the computer:
+
+\begin{shaded}
 \begin{verbatim}
 Hello Dude!
 
@@ -252,8 +322,9 @@ to be safe.
 Thank you
 Peter
 \end{verbatim}
+\end{shaded}
 
-I also found a file called \texttt{\_RECoVERY\_+wdbic.html} (see Figure \ref{fig:rec-file}).
+I also found three files called \texttt{\_RECoVERY\_+wdbic} of different types (PNG, HTML, TXT) in the \texttt{Roaming} directory (see Table \ref{table:sha1-malware-info} for the checksums). You can see the content of the HTML file in Figure \ref{fig:rec-file}
 
 \begin{figure}[!ht]
     \centering
@@ -267,21 +338,16 @@ Further analysis on these files is shown in Section \ref{sec:malware}.
     \centering
     \begin{tabular}{ll}
     \toprule
-        \textbf{Content} & \textbf{SHA-1} \\
-        \midrule
-        Nina concept art & \texttt{98296EF2B0A297A323EA36CA7E5C31399D412D91} \\
-        Ransomware note & \texttt{FD47F9BC079230331F239A6DE549FB60F625E124} \\
-        1st email exchange with Iris & \texttt{7CCB4BF11E4601E9DCFC1821F286CF673DA4142E} \\
-        2nd email exchange with Iris & \texttt{74D1A62DCB6332BD1215083B99FB0A92F95CDDE4} \\
-        3rd email exchange with Iris & \texttt{3486BE7A44BA05D0EED985881C38C2DC226CC4E5} \\
-        4th email exchange with Iris & \texttt{E08A6FCED0D464E55C4C4357164B4258E9F634B9} \\
-        Email exchange with the tech support & \texttt{A9E2290731742703465F183C5F4E52CD640E65C6} \\
+    \textbf{Content} & \textbf{SHA-1} \\
+    \midrule
+    Email exchange with the tech support & \texttt{A9E2290731742703465F183C5F4E52CD640E65C6} \\
+    \texttt{\_RECoVERY\_+wdbic.html} & \texttt{FD47F9BC079230331F239A6DE549FB60F625E124} \\
+    \texttt{\_RECoVERY\_+wdbic.png} & \texttt{8BDAF44B3454C4DE35B13F66AB04F8092DCAFBE5} \\
     \bottomrule
     \end{tabular}
-    \caption{Checksums of some files.}
-    \label{table:sha1}
+    \caption{Checksums of the ransomware notes and the e-mail to tech support.}
+    \label{table:sha1-malware-info}
 \end{table}
-
 
 \section{Expert testimony}
 
@@ -303,7 +369,7 @@ The concept art found is a drawing of the main character of the game, Nina. We c
 \label{sec:malware}
 
 \subsubsection{Discovery}
-I found traces on the device of the malware TeslaCrypt, which is a ransomware that encrypts files on the victim's computer and asks for a ransom to decrypt them.
+I found traces on the device of the malware TeslaCrypt, which is a ransomware that encrypts files on the victim's computer and asks for a ransom to decrypt them \cite{teslacrypt}.
 The first thing I noticed was the great amount of files with the extension \texttt{.mp3}, and the fact that they were all encrypted.
 Moreover, I found an e-mail from Peter to tech support, signaling this weird behavior of the computer.
 
@@ -312,7 +378,10 @@ Conducting a search on the Internet, I found out that the malware TeslaCrypt is 
 I started looking for the ransom note, which is usually a file with the recovery instructions: indeed I found the file \texttt{\_RECoVERY\_+wdbic.html} (see Figure \ref{fig:rec-file}).
 
 \subsubsection{Decryption}
-Conducting some researches, I found out that the author of the ransomware have released the master key, and there are some tools to decrypt the files. I used the tool TeslaDecrypter \cite{tesla-decrypt} to decrypt the files with the extension \texttt{.mp3}.
+Conducting some researches, I found out that the author of the ransomware have released the master key \cite{teslacrypt-masterkey}: \\
+\texttt{440A241DD80FCC5664E861989DB716E08CE627D8D40C7EA360AE855C727A49EE}
+
+There are some tools to decrypt the files: I used the tool TeslaDecrypter \cite{tesla-decrypt} to decrypt the files with the extension \texttt{.mp3}.
 
 One of the file affected was the concept art of the game.
 
@@ -320,12 +389,7 @@ One of the file affected was the concept art of the game.
 
 After this analysis, I would reccomend to the investigators to analyze the computer of Iris, to find out if she has leaked other information about the game. Moreover, since Peter tried to hide the files, I would suggest to find the password to the TrueCrypt container, to see if there are other files that he tried to hide, like any contact with the competing company, and a concrete proof of the leak.
 
-
-Do we have to list all the files affected by malware?
-Do we need to find the password to TrueCrypt container?
-Weird installation date
-
-\addcontentsline{toc}{chapter}{Sources}
-\printbibliography[title={Sources}]
+\addcontentsline{toc}{chapter}{References}
+\printbibliography[title={References}]
 
 \end{document}
