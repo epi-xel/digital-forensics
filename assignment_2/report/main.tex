@@ -100,7 +100,7 @@ Then, I analized the image using Autopsy. After a first analysis, I performed fi
 \subsection{System specifications}
 
 The image analyzed is a desktop computer, with a 64-bit architecture, running Windows 7 Professional Service Pack 1. 
-You can find more details in Table \ref{table:stats}.
+You can find more details in Table \ref{table:stats} (please notice that as `last time the system was running' I considered the last time there was a system event).
 
 \begin{table}[!ht]
     \centering
@@ -111,8 +111,8 @@ You can find more details in Table \ref{table:stats}.
         \textbf{Operating system} & Windows 7 Professional Service Pack 1 \\
         \textbf{Computer name} & HYRULE \\
         \textbf{Installing date of the OS} & 2016-07-06 23:27:42 GMT+0000 \\
-        \textbf{Last usage time} & 2016-09-05 15:28:53 \\
-        \textbf{SID} & S-1-5-21-3032217210-630098460-752710606 \\
+        \textbf{Last time the system was running} & 2016-09-05 15:28:53 CEST \\
+        \textbf{SID} & S-1-5-21-3032217210-630098460-752710606-1001 \\
     \bottomrule
     \end{tabular}
     \caption{Statistics of some cracked containers.}
@@ -129,7 +129,7 @@ Moreover, analyzing web history, I found out that Peter has visited numerous web
 
 In this analysis I will focus on the files that I found more relevant to the case, which are two e-mail exchanges and a photo of a concept art.
 
-To verify the integrity of files found, I computed the SHA-1 checksum of some of them. The results are shown in Table \ref{table:sha1}.
+To verify the integrity of files found, I computed the SHA-1 checksum of them. The results are shown in Table \ref{table:sha1}.
 
 The major evidence that I found is the following e-mail exchanges between Peter and Iris.
 
@@ -142,6 +142,8 @@ The following e-mail exchange is the first one in time between Peter and Iris, w
 
 \begin{shaded}
 \begin{verbatim}
+> Am Wed, 24 Aug 2016 00:48:30 +0200
+> schrieb briennefan@openmailbox.org:
 >> Hihi
 >> 
 >> Hi Peter, now we can chat. ;)
@@ -252,11 +254,11 @@ Analysis of the picture is shown in Section \ref{sec:art}.
     \toprule
         \textbf{Content} & \textbf{SHA-1} \\
         \midrule
-        Nina concept art & \texttt{98296EF2B0A297A323EA36CA7E5C31399D412D91} \\
-        1st email exchange with Iris & \texttt{7CCB4BF11E4601E9DCFC1821F286CF673DA4142E} \\
-        2nd email exchange with Iris & \texttt{74D1A62DCB6332BD1215083B99FB0A92F95CDDE4} \\
-        3rd email exchange with Iris & \texttt{3486BE7A44BA05D0EED985881C38C2DC226CC4E5} \\
-        4th email exchange with Iris & \texttt{E08A6FCED0D464E55C4C4357164B4258E9F634B9} \\
+        Nina concept art \\(IMG\_20160823\_130922.jpg) & \texttt{98296EF2B0A297A323EA36CA7E5C31399D412D91} \\
+        1st email exchange with Iris (4) & \texttt{7CCB4BF11E4601E9DCFC1821F286CF673DA4142E} \\
+        2nd email exchange with Iris (6) & \texttt{74D1A62DCB6332BD1215083B99FB0A92F95CDDE4} \\
+        3rd email exchange with Iris (8) & \texttt{3486BE7A44BA05D0EED985881C38C2DC226CC4E5} \\
+        4th email exchange with Iris (11) & \texttt{E08A6FCED0D464E55C4C4357164B4258E9F634B9} \\
     \bottomrule
     \end{tabular}
     \caption{Checksums of the most important files for evidence.}
@@ -319,7 +321,9 @@ Peter
 \end{verbatim}
 \end{shaded}
 
-I also found three files called \texttt{\_RECoVERY\_+wdbic} of different types (PNG, HTML, TXT) in the \texttt{Roaming} directory (see Table \ref{table:sha1-malware-info} for the checksums). You can see the content of the HTML file in Figure \ref{fig:rec-file}
+I also found three files called \texttt{\_RECoVERY\_+wdbic} of different types (PNG, HTML, TXT) in the \texttt{Roaming} directory. You can see the content of the HTML file in Figure \ref{fig:rec-file}. Moreover, I found a suspicious JavaScript script in the cache of the browser.
+
+You can see Table \ref{table:sha1-malware-info} for the checksums of the files mentioned above.
 
 \begin{figure}[!ht]
     \centering
@@ -335,9 +339,10 @@ Further analysis on these files is shown in Section \ref{sec:malware}.
     \toprule
     \textbf{Content} & \textbf{SHA-1} \\
     \midrule
-    Email exchange with the tech support & \texttt{A9E2290731742703465F183C5F4E52CD640E65C6} \\
+    Email exchange with the tech support (12) & \texttt{A9E2290731742703465F183C5F4E52CD640E65C6} \\
     \texttt{\_RECoVERY\_+wdbic.html} & \texttt{FD47F9BC079230331F239A6DE549FB60F625E124} \\
     \texttt{\_RECoVERY\_+wdbic.png} & \texttt{8BDAF44B3454C4DE35B13F66AB04F8092DCAFBE5} \\
+    \texttt{Suspicious JS script} & \texttt{7A34E731F9D94317C715AA211387E6C207CA34E3} \\
     \bottomrule
     \end{tabular}
     \caption{Checksums of the ransomware notes and the e-mail to tech support.}
@@ -368,7 +373,7 @@ I found traces on the device of the malware TeslaCrypt, which is a ransomware th
 The first thing I noticed was the great amount of files with the extension \texttt{.mp3}, and the fact that they were all encrypted.
 Moreover, I found an e-mail from Peter to tech support, signaling this weird behavior of the computer.
 
-Conducting a search on the Internet, I found out that the malware TeslaCrypt is responsible for this kind of encryption. This malware is common downloading games: this is compatible with the fact that Peter is close to the gaming industry.
+Conducting a search on the Internet, I found out that the malware TeslaCrypt is responsible for this kind of encryption. This malware is common downloading games: this is compatible with the fact that Peter is close to the gaming industry and seems to be a videogame lover. I also found in the cache of the browser some suspicious JavaScript scripts that were probably used to download the malware, since there are references to websites that are known to be used maliciously.
 
 I started looking for the ransom note, which is usually a file with the recovery instructions: indeed I found the file \texttt{\_RECoVERY\_+wdbic.html} (see Figure \ref{fig:rec-file}).
 
