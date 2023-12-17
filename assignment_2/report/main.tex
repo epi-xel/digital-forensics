@@ -69,7 +69,7 @@ For this analysis, I utilized the following software:
 
 \begin{itemize}
     \item \textbf{Autopsy} \cite{autopsy} -- version 1.24 (update 7); to perform container mounting and access.
-    \item \textbf{Qemu} \cite{qemu}; to convert the image from qcow format to raw format.
+    \item \textbf{Qemu} \cite{qemu} -- version 8.1.0; to convert the image from qcow format to raw format.
     \item \textbf{PhotoRec} \cite{photorec} -- version 6.2.6; to perform file carving. 
     \item \textbf{TeslaDecrypter} \cite{tesla-decrypt}; to decrypt the files encrypted by the ransomware TeslaCrypt.
 \end{itemize}
@@ -100,7 +100,14 @@ Then, I analized the image using Autopsy. After a first analysis, I performed fi
 \subsection{System specifications}
 
 The image analyzed is a desktop computer, with a 64-bit architecture, running Windows 7 Professional Service Pack 1. 
-You can find more details in Table \ref{table:stats} (please notice that as `last time the system was running' I considered the last time there was a system event).
+You can find more details in Table \ref{table:stats}.
+
+To find the last time the system was running I considered the last time there was a system event, using the Autopsy timeline utility and filtering for system events: the last event was on 2016-09-05 15:28:53 CEST.
+
+To check the install date of the operating system, I checked the registry key:\\ \texttt{HKEY\_LOCAL\_MACHINE\textbackslash{}SOFTWARE\textbackslash{}Microsoft\textbackslash{}Windows NT\textbackslash{}CurrentVersion\textbackslash{}InstallDate} \\
+and I found out that the OS was installed on 2016-07-06 23:27:42 GMT+0000.
+
+To find the SID of the user and the computer name / OS, I used the Autopsy utility \textit{OS Accounts} and \textit{Operating System Information}.
 
 \begin{table}[!ht]
     \centering
@@ -133,7 +140,10 @@ To verify the integrity of files found, I computed the SHA-1 checksum of them. T
 
 The major evidence that I found is the following e-mail exchanges between Peter and Iris.
 
-\subsubsection{Email exchanges}
+\subsubsection{E-mail exchanges}
+
+The mail exchanges are between Peter and the address \texttt{briennefan@openmailbox.org}. Reading the messages, we can understand that this
+address belongs to Iris.
 
 \paragraph{First email exchange}
 \label{sec:first-mail}
@@ -237,16 +247,9 @@ For further analysis on the mail exchange, see Section \ref{sec:mail}.
 \subsubsection{Concept art}
 
 I found a photo of a concept art, which is shown in Figure \ref{fig:nina}.
-This file was found in 3 different situations: one as deleted file, one as encrypted file (see Section \ref{sec:malware}) and only the last one as a normal file which could be opened.
+This file was found in three different situations: one as deleted file, one as encrypted file (see Section \ref{sec:malware}) and only the last one as a normal file which could be opened.
 
 Analysis of the picture is shown in Section \ref{sec:art}.
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=\textwidth]{images/nina_concept.jpg}
-    \caption{Nina concept art.}
-    \label{fig:nina}
-\end{figure}
 
 \begin{table}[!ht]
     \centering
@@ -282,6 +285,24 @@ The files mentioned are the following (see Table \ref{table:sha1-malware} for th
     \item \texttt{contactdata.csv.mp3}
 \end{itemize}
 
+As confirmation of this anomaly, I found an e-mail from Peter to tech support, signaling this weird behavior of the computer:
+
+\begin{shaded}
+\begin{verbatim}
+Hello Dude!
+
+Can you help me? Suddenly my files changed to mp3's and I got some
+strange messages with "IMPORTANT INFORMATION" and I cannot open those
+files... I did nothing great, I browsed the web for stuff and then I
+got this message...
+Maybe you can help me? I got some of the data back, but I saved the mp3
+to be safe.
+
+Thank you
+Peter
+\end{verbatim}
+\end{shaded}
+
 \begin{table}[!ht]
     \centering
     \begin{tabular}{ll}
@@ -302,24 +323,6 @@ The files mentioned are the following (see Table \ref{table:sha1-malware} for th
     \caption{Checksums of the files encrypted by the malware.}
     \label{table:sha1-malware}
 \end{table}
-
-As confirmation of this anomaly, I found an e-mail from Peter to tech support, signaling this weird behavior of the computer:
-
-\begin{shaded}
-\begin{verbatim}
-Hello Dude!
-
-Can you help me? Suddenly my files changed to mp3's and I got some
-strange messages with "IMPORTANT INFORMATION" and I cannot open those
-files... I did nothing great, I browsed the web for stuff and then I
-got this message...
-Maybe you can help me? I got some of the data back, but I saved the mp3
-to be safe.
-
-Thank you
-Peter
-\end{verbatim}
-\end{shaded}
 
 I also found three files called \texttt{\_RECoVERY\_+wdbic} of different types (PNG, HTML, TXT) in the \texttt{Roaming} directory. You can see the content of the HTML file in Figure \ref{fig:rec-file}. Moreover, I found a suspicious JavaScript script in the cache of the browser.
 
@@ -351,7 +354,7 @@ Further analysis on these files is shown in Section \ref{sec:malware}.
 
 \section{Expert testimony}
 
-\subsection{Mail exchange}
+\subsection{E-mail exchange}
 \label{sec:mail}
 
 Reading the e-mails, I found out that Iris has asked Peter to steal the concept art from Sabrina's desk (since sometimes she leaves drawings unlocked on the table), getting advantage of the fact that Peter seems to like her: from previous e-mails (first and second exchange), I understood that they have been already on a date.
@@ -363,7 +366,14 @@ These two emails are the evidence that Iris has leaked information about the gam
 \subsection{Concept art}
 \label{sec:art}
 
-The concept art found is a drawing of the main character of the game, Nina. We can spot the name of the designer, Sabrina, on the top right corner of the image and the mentions to Anna and John, who suggested some changes to the design. This is probably the file that Iris asked Peter to steal.
+The concept art found is a drawing of the main character of the game, Nina (see Figure \ref{fig:nina}). We can spot the name of the designer, Sabrina, on the top right corner of the image and the mentions to Anna and John, who suggested some changes to the design. This is probably the file that Iris asked Peter to steal.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{images/nina_concept.jpg}
+    \caption{Nina concept art.}
+    \label{fig:nina}
+\end{figure}
 
 \subsection{Malware}
 \label{sec:malware}
@@ -373,7 +383,7 @@ I found traces on the device of the malware TeslaCrypt, which is a ransomware th
 The first thing I noticed was the great amount of files with the extension \texttt{.mp3}, and the fact that they were all encrypted.
 Moreover, I found an e-mail from Peter to tech support, signaling this weird behavior of the computer.
 
-Conducting a search on the Internet, I found out that the malware TeslaCrypt is responsible for this kind of encryption. This malware is common downloading games: this is compatible with the fact that Peter is close to the gaming industry and seems to be a videogame lover. I also found in the cache of the browser some suspicious JavaScript scripts that were probably used to download the malware, since there are references to websites that are known to be used maliciously.
+Conducting a search on the Internet, I found out that the malware TeslaCrypt is responsible for this kind of encryption. This malware is common downloading games: this is compatible with the fact that Peter is close to the gaming industry and seems to be a videogame lover. I also found in the cache of the browser some suspicious JavaScript scripts linked to Peter's game searches on the web that could have been hypotetically used to download the malware, since there are references to websites that are known to be used maliciously.
 
 I started looking for the ransom note, which is usually a file with the recovery instructions: indeed I found the file \texttt{\_RECoVERY\_+wdbic.html} (see Figure \ref{fig:rec-file}).
 
@@ -385,9 +395,11 @@ There are some tools to decrypt the files: I used the tool TeslaDecrypter \cite{
 
 One of the file affected was the concept art of the game.
 
-\subsection{Future work}
+\subsection{Future investigations}
 
 After this analysis, I would recommend to the investigators to analyze the computer of Iris, to find out if she has leaked the concept art sent by Peter. It would be significant to analyze her e-mails and her web history, to find out if she has any contact with the competing company.
+
+Moreover, since Peter has tried to hide the files, I would recommend to the investigators to analyze the TrueCrypt container, to find out if there are other files that he has tried to hide.
 
 \addcontentsline{toc}{chapter}{References}
 \printbibliography[title={References}]
