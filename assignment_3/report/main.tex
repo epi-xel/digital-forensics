@@ -79,19 +79,44 @@ To preserve the integrity of the evidence, I reported the MD5 hash of the files 
     \textbf{Content} & \textbf{MD5} \\
     \midrule
     Video of the arrest & \texttt{1fb629ceb7e03948032448b6af978c94} \\
+    Hidden image & \texttt{066858f4b1971b0501b9a06296936a34} \\
     1st photo of the car & \texttt{626e1bf6821aa7d3212727ee3bf9c63d} \\
     2nd photo of the car & \texttt{13c3ebfb60c5ec08893c233ce42a3643} \\
     3rd photo of the car & \texttt{dd27d1cf0fbcbd654c27c65aeb7f0efa} \\
-    Hidden image & \texttt{066858f4b1971b0501b9a06296936a34} \\
+    Native messages DB & \texttt{af39b6fbe58e2ef549ea2089f164763c} \\
+    Instagram messages DB & \texttt{ccc30adbe925068c642f96c8eb2b9b80} \\
     \bottomrule
     \end{tabular}
     \caption{Checksums of important files.}
     \label{table:hashes}
 \end{table}
 
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{ll}
+    \toprule
+    \textbf{Content} & \textbf{MD5} \\
+    \midrule
+    \texttt{20210703\_192737.jpg} & \texttt{038744fe39f45d0244dc608fca2fab56} \\
+    \texttt{20210703\_192751.jpg} & \texttt{af34c57432d5b3f618b7d82361e9b556} \\
+    \texttt{20210703\_192759.jpg} & \texttt{6baa8d4847e75a506a1e672b7242d663} \\
+    \texttt{20210703\_192806.jpg} & \texttt{37c5342fd43d988b26c78c918b267751} \\
+    \texttt{20210703\_192822.jpg} & \texttt{5bba7e07e07899a7b6b76b947add96b5} \\
+    \texttt{20210703\_192830.jpg} & \texttt{0819ea4063e283481794b5cc60cb9810} \\
+    \texttt{20210703\_192836.jpg} & \texttt{670129451ce9faeab6732a6d4e9222df} \\
+    \texttt{20210703\_192839.jpg} & \texttt{7a33ec7e929bfaa2f9f35b5e88c2c38d} \\
+    \texttt{20210703\_192901.jpg} & \texttt{e2f0e4d078508b20d03d5ce94557f1de} \\
+    \texttt{20210703\_192907.jpg} & \texttt{26ef1f2bab90414dd29c770c23cb5b68} \\
+    \bottomrule
+    \end{tabular}
+    \caption{Checksums of the photos of the cars.}
+    \label{table:hashes-cars}
+\end{table}
+
+
 \subsection{Findings}
 
-There are numerous files and applications concerning automobiles, as well as pictures of cars. 
+There are numerous files and applications concerning automobiles, as well as pictures of cars. The majority of these photos are simply related to the apps installed on the smartphone.
 
 Between the installed apps, I report the following:
 \begin{itemize}
@@ -108,7 +133,7 @@ Between the installed apps, I report the following:
     \item \textbf{Cartomizer}
 \end{itemize}
 
-I found some messages exchanged with a contact called \texttt{+15402993169} (see Figure \ref{fig:messages}).
+I found some messages exchanged with a contact called \texttt{+15402993169} (see Figure \ref{fig:messages}). The conversation was conducted in the native messages app of the smartphone (you can see the hash of the DB containing the messages in the table \ref{table:hashes}).
 
 \begin{figure}[!ht]
     \centering
@@ -182,7 +207,7 @@ The paths of the pictures are the following:
     \label{fig:cars}
 \end{figure}
 
-Moreover, I found some other messages with a contact called Beth Dutton in Instagram. You can see the messages in Figure \ref{fig:messages2}.
+Moreover, I found some other messages with a contact called Beth Dutton in Instagram. You can see the messages in Figure \ref{fig:messages2} and the hash of the DB containing Instagram direct messages in the table \ref{table:hashes}.
 
 \begin{figure}[!ht]
     \centering
@@ -211,9 +236,73 @@ The conversation starts with Heisenberg looking at his inventory to find a Hyund
 
 Moreover, as I already mentioned, I found some suspicious messages with a contact called Beth Dutton, where there are death menaces from her. This indicates that Heisenberg was conducting sketchy business.
 
-I found numerous pictures of cars in the gallery, which are probably the cars that Heisenberg was selling. 
+As I already mentioned, there are many pictures of cars in his smartphone, but they are related to the apps installed on the smartphone. So I looked for pictures with capture time in the DCMI folder: in this way we can suppose that the pictures were taken by Heisenberg. I found 10 pictures of cars in this way, which are shown in Figure \ref{fig:cars2}. All the pictures are in the folder \texttt{Dump/data/media/0/DCIM} and you can check their names and hashes in the table \ref{table:hashes-cars}.
+
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/car_photos/20210703_192737.jpg} %1
+        \caption{}
+    \end{subfigure}
+    \hspace{2 pt}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/car_photos/20210703_192751.jpg} %2
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/car_photos/20210703_192759.jpg} %3
+        \caption{}
+    \end{subfigure}
+    \hspace{2 pt}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/car_photos/20210703_192806.jpg} %4
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/car_photos/20210703_192822.jpg} %5
+        \caption{}
+    \end{subfigure}
+    \hspace{2 pt}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/car_photos/20210703_192830.jpg} %6
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/car_photos/20210703_192836.jpg} %7
+        \caption{}
+    \end{subfigure}
+    \hspace{2 pt}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/car_photos/20210703_192839.jpg} %8
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/car_photos/20210703_192901.jpg} %9
+        \caption{}
+    \end{subfigure}
+    \hspace{2 pt}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/car_photos/20210703_192907.jpg} %10
+        \caption{}
+    \end{subfigure}
+    \caption{Pictures of cars with capture time.}
+    \label{fig:cars2}
+\end{figure}
+
 
 Since I didn't find any other message with other contacts, I suppose he was conducting his main business in the app Signal \cite{signal}, which is an end-to-end encrypted messaging app. I found numerous activities related to this app in the timeline.
+
+Finally, the presence of numerous apps related to buying and selling cars, such as \textit{CarGurus} and \textit{Autotrader}, could be evidence of him selling cars on these apps.
 
 \subsection{Recordings of the arrest}
 
