@@ -68,9 +68,9 @@ For this analysis, I utilized the following software:
 
 For this anaylis I got advantage of various tool of Cellebrite Reader, such as the search bar and the timeline.
 
-To preserve the integrity of the evidence, I reported the MD5 hash of the files I found. You can find the MD5 hashes in the table \ref{table:hashes}.
-
 \subsection{Hash values}
+
+To preserve the integrity of the evidence, I reported the MD5 hash of the files I found. You can find the MD5 hashes in the tables \ref{table:hashes} and \ref{table:hashes-cars}.
 
 \begin{table}[!ht]
     \centering
@@ -85,6 +85,8 @@ To preserve the integrity of the evidence, I reported the MD5 hash of the files 
     3rd photo of the car & \texttt{dd27d1cf0fbcbd654c27c65aeb7f0efa} \\
     Native messages DB & \texttt{af39b6fbe58e2ef549ea2089f164763c} \\
     Instagram messages DB & \texttt{ccc30adbe925068c642f96c8eb2b9b80} \\
+    Chrome cache picture & \texttt{505fe0c5db1342818ed42089e2ba1edb} \\
+    System packages & \texttt{cd3b0e339b44cf03945a2926bddd15a1} \\
     \bottomrule
     \end{tabular}
     \caption{Checksums of important files.}
@@ -123,17 +125,20 @@ Between the installed apps, I report the following:
     \item \textbf{Venmo} \cite{venmo}
     \item \textbf{Twitter}
     \item \textbf{HideX: Calculator Lock, App Hider and Photo Vault} \cite{calculator} 
-    %\item \textbf{ANT Radio Service} 
-    %\item \textbf{ANT+ Plugins Service} 
-    \item \textbf{BlueDriver OBD2 Scan Tool} \cite{blue-driver}
     \item \textbf{Signal} \cite{signal} 
-    %\item \textbf{WhatsApp}
     \item \textbf{CarGurus}
     \item \textbf{Autotrader}
     \item \textbf{Cartomizer}
 \end{itemize}
 
-I found some messages exchanged with a contact called \texttt{+15402993169} (see Figure \ref{fig:messages}). The conversation was conducted in the native messages app of the smartphone (you can see the hash of the DB containing the messages in the table \ref{table:hashes}).
+
+\section{Analysis}
+
+\subsection{Evidence of deals with stolen cars}
+
+The major evidence comes from messages exchanged with the contact \texttt{+15402993169} (see Figure \ref{fig:messages}). The conversation was conducted in the native messages app of the smartphone (you can see the hash of the DB containing the messages in the table \ref{table:hashes}).
+
+The conversation starts with Heisenberg looking at his inventory to find a Hyundai for the contact. He asks him how he obtained his name, probably to be sure he is not a police officer. Heisenberg finds him a Hyundai Sonata and they plan to meet at the Washington Street Tennis Court in 20 minutes.
 
 \begin{figure}[!ht]
     \centering
@@ -207,7 +212,9 @@ The paths of the pictures are the following:
     \label{fig:cars}
 \end{figure}
 
-Moreover, I found some other messages with a contact called Beth Dutton in Instagram. You can see the messages in Figure \ref{fig:messages2} and the hash of the DB containing Instagram direct messages in the table \ref{table:hashes}.
+Moreover, I found some other messages with a contact called Beth Dutton in Instagram, where there are death menaces from her. This indicates that Heisenberg was conducting sketchy business. 
+
+You can see the messages in Figure \ref{fig:messages2} and the hash of the DB containing Instagram direct messages in the table \ref{table:hashes}.
 
 \begin{figure}[!ht]
     \centering
@@ -225,16 +232,6 @@ Moreover, I found some other messages with a contact called Beth Dutton in Insta
     \caption{Screenshots of the messages exchanged with Beth Dutton.}
     \label{fig:messages2}
 \end{figure}
-
-
-\section{Analysis}
-
-\subsection{Evidence of deals with stolen cars}
-
-The major evidence comes from messages exchanged with the contact \texttt{+15402993169} (see Figure \ref{fig:messages}).
-The conversation starts with Heisenberg looking at his inventory to find a Hyundai for the contact. He asks him how he obtained his name, probably to be sure he is not a police officer. Heisenberg finds him a Hyundai Sonata and they plan to meet at the Washington Street Tennis Court in 20 minutes.
-
-Moreover, as I already mentioned, I found some suspicious messages with a contact called Beth Dutton, where there are death menaces from her. This indicates that Heisenberg was conducting sketchy business.
 
 As I already mentioned, there are many pictures of cars in his smartphone, but they are related to the apps installed on the smartphone. So I looked for pictures with capture time in the DCMI folder: in this way we can suppose that the pictures were taken by Heisenberg. I found 10 pictures of cars in this way, which are shown in Figure \ref{fig:cars2}. All the pictures are in the folder \texttt{Dump/data/media/0/DCIM} and you can check their names and hashes in the table \ref{table:hashes-cars}.
 
@@ -299,7 +296,6 @@ As I already mentioned, there are many pictures of cars in his smartphone, but t
     \label{fig:cars2}
 \end{figure}
 
-
 Since I didn't find any other message with other contacts, I suppose he was conducting his main business in the app Signal \cite{signal}, which is an end-to-end encrypted messaging app. I found numerous activities related to this app in the timeline.
 
 Finally, the presence of numerous apps related to buying and selling cars, such as \textit{CarGurus} and \textit{Autotrader}, could be evidence of him selling cars on these apps.
@@ -327,10 +323,14 @@ To find out if the police followed best practices, I got advantage of the timeli
 
 You can see for example some of the network activities during 22/07/2021 which is two days after the arrest in Figure \ref{fig:pbp}.
 
+I retrieved the network activities in the file at the path:\\ \texttt{Dump/data/system/packages.xml}.
+
+You can see the hash of the file in the table \ref{table:hashes}.
+
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=\textwidth]{images/pbp.png}
-    \caption{network activities of the smartphone after the arrest.}
+    \caption{Network activities of the smartphone after the arrest.}
     \label{fig:pbp}
 \end{figure}
 
@@ -364,7 +364,9 @@ Moreover, checking Twitter notifications in Gmail, I found numerous news about c
 \subsection{File hiding or encryption}
 \label{sec:file-hiding}
 
-I found the app \textit{Calculator} \cite{calculator} which is used to hide files.
+Looking at Heisenberg's web searches I found different searches related to file hiding and encryption, such as \textit{hidden photos app}.
+
+I found the app \textit{HideX: Calculator Lock, App Hider and Photo Vault} \cite{calculator} which is used to hide files.
 
 The app code is \texttt{com.flatfish.calculator} and the path is the following:
 
@@ -381,11 +383,12 @@ The app presents itself as a calculator, but it is actually used to hide files. 
 
 \subsection{External drives}
 
-I found the some pictures related to \textit{Android USB OTG}, which is a standard that allows mobile devices to connect to external drives.
+I found a picture in the Chrome cache related to \textit{Android USB OTG} (see Figure \ref{fig:usb}), which is a standard that allows mobile devices to connect to external drives. You can see the hash of the picture in the table \ref{table:hashes} and the path is the following:\\
+\texttt{Dump/data/data/com.android.chrome/cache/Cache/ff922abbaff591ef\_0/android-\\usb-otg.jpg}.
 
-In addition, I found that Heisenberg installed the apps \textit{ANT Radio Service} and \textit{ANT+ Plugins Service}, which are used to connect to external devices.
+Looking indeed at his web searches, I noticed that he searched for \textit{can a samsung micro usb connector transfer data} and \textit{how to mount a pendrive on android} (see Figure \ref{fig:web}).
 
-Looking at his web searches, I noticed that he looked for \textit{can a samsung micro usb connector transfer data}, \textit{how to mount a pendrive on android} and \textit{cheap obd scanner} (see Figure \ref{fig:web}).
+Given these information, I suppose that he wanted to connect a pendrive to his smartphone to transfer data.
 
 \begin{figure}[!ht]
     \centering
@@ -394,13 +397,11 @@ Looking at his web searches, I noticed that he looked for \textit{can a samsung 
     \label{fig:web}
 \end{figure}
 
-Finally, I found the app \textit{BlueDriver OBD2 Scan Tool}, which is used to scan a vehicle. BlueDriver is a dongle that connects to the OBD2 port of a vehicle and sends data to a smartphone via Bluetooth. You can see the device in Figure \ref{fig:bluedriver}.
-
-\begin{figure}[!ht]
+\begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{images/bluedriver.png}
-    \caption{Device \textit{BlueDriver}.}
-    \label{fig:bluedriver}
+    \includegraphics[width=0.5\textwidth]{images/android-usb-otg.jpg}
+    \caption{Picture found in the cache of Chrome.}
+    \label{fig:usb}
 \end{figure}
 
 \subsection{Hidden image}
@@ -410,7 +411,7 @@ Thanks to the search bar, I found the image with the following MD5 hash: \\
 
 The path is \texttt{Dump/data/data/com.flatfish.cal.privacy/cache/image\_manager\_disk \\ \_cache/7ae6e97ba4ad0d693413273d6e270a412af3331a9c96c7a9049e3ae9b6047c9d.0}.
 
-We can see that the picture was hidden with the app \textit{HideX: Calculator Lock, App Hider and Photo Vault} (see Section \ref{sec:file-hiding}): I luckily found it in the cache of the app (see Figure \ref{fig:cache}).
+We can see that the picture was hidden with the app \textit{HideX: Calculator Lock, App Hider and Photo Vault} (see Section \ref{sec:file-hiding}): I found it in the cache of the app (see Figure \ref{fig:cache}).
 
 \begin{figure}[!ht]
     \centering
@@ -427,6 +428,8 @@ I found the messages exchanged with \texttt{+15402993169}: you can see part of t
 
 To check the last usages of the app Signal \cite{signal} on 14/07/2021, I used the timeline tool, given that the app code is \texttt{org.thoughtcrime.securesms}.
 You can see part of the timeline in Figure \ref{fig:signal}.
+
+The last usage of the app on 14/07/2021 was at 20:00:00 (UTC+0).
 
 \begin{figure}[!ht]
     \centering
