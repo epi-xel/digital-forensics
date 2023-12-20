@@ -319,7 +319,8 @@ The video shows Heisenberg showing a car to a possible buyer, who is actually an
 
 \subsection{Police best practices}
 
-To find out if the police followed best practices, I got advantage of the timeline tool: I looked for activities on the smartphone after the arrest and I found that there are network activities in the smartphone after it. This means that the police did not follow best practices, because they should have disconnected it from the network as soon as possible and don't use it anymore. This is because the smartphone could be remotely wiped, so it is important to disconnect it from the network.
+To find out if the police followed best practices, I got advantage of the timeline tool: I looked for activities on the smartphone after the arrest and I found that there are network activities in the smartphone after it. There were indeed used many different apps.
+This means that the police did not follow best practices, because they should have disconnected it from the network as soon as possible and don't use it anymore. This is because the smartphone could be remotely wiped, so it is important to disconnect it from the network.
 
 You can see for example some of the network activities during 22/07/2021 which is two days after the arrest in Figure \ref{fig:pbp}.
 
@@ -329,8 +330,18 @@ You can see the hash of the file in the table \ref{table:hashes}.
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=\textwidth]{images/pbp.png}
-    \caption{Network activities of the smartphone after the arrest.}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/pbp.png}
+        \caption{}
+    \end{subfigure}
+    \hspace{2 pt}
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/pbp2.png}
+        \caption{}
+    \end{subfigure}
+    \caption{Some of the network activities of the smartphone after the arrest. As you can see, numerous apps have been used.}
     \label{fig:pbp}
 \end{figure}
 
@@ -368,8 +379,7 @@ Looking at Heisenberg's web searches I found different searches related to file 
 
 I found the app \textit{HideX: Calculator Lock, App Hider and Photo Vault} \cite{calculator} which is used to hide files.
 
-The app code is \texttt{com.flatfish.calculator} and the path is the following:
-
+The app code is \texttt{com.flatfish.calculator} and the path is the following: \\
 \texttt{Dump/data/app/com.flatfish.calculator}. 
 
 The app presents itself as a calculator, but it is actually used to hide files. You can see the app icon in Figure \ref{fig:calc}.
