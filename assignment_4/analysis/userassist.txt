@@ -1,0 +1,4 @@
+Hive Offset     Hive Name       Path    Last Write Time Type    Name    ID      Count   Focus Count     Time Focused   Last Updated     Raw Data
+
+0xd30c81133000  hive0xd30c81133000      -       -       -       -       -       -       -       -       -       -
+0xd30c812ef000  hive0xd30c812ef000      -       -       -       -       -       -       -       -       -       -

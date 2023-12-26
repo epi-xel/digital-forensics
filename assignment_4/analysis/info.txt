@@ -1,0 +1,17 @@
+Is64Bit True
+IsPAE   False
+layer_name      0 WindowsIntel32e
+memory_layer    1 FileLayer
+KdVersionBlock  0xf804216099a0
+Major/Minor     15.22621
+MachineType     34404
+KeNumberProcessors      2
+SystemTime      2023-01-09 22:17:11
+NtSystemRoot    C:\Windows
+NtProductType   NtProductWinNt
+NtMajorVersion  10
+NtMinorVersion  0
+PE MajorOperatingSystemVersion  10
+PE MinorOperatingSystemVersion  0
+PE Machine      34404
+PE TimeDateStamp        Mon Jul  5 20:20:35 2100

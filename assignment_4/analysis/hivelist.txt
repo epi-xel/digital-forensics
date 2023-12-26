@@ -1,0 +1,45 @@
+Offset  FileFullPath    File output
+
+0xd30c7d465000          Disabled
+0xd30c7d453000  \REGISTRY\MACHINE\SYSTEM        Disabled
+0xd30c7d4ed000  \REGISTRY\MACHINE\HARDWARE      Disabled
+0xd30c7dd83000  \SystemRoot\System32\Config\SOFTWARE    Disabled
+0xd30c7fa28000  \Device\HarddiskVolume1\EFI\Microsoft\Boot\BCD  Disabled
+0xd30c7d81d000  \SystemRoot\System32\Config\DEFAULT     Disabled
+0xd30c7fd9f000  \SystemRoot\System32\Config\SECURITY    Disabled
+0xd30c7fe21000  \SystemRoot\System32\Config\SAM Disabled
+0xd30c81133000  \??\C:\Windows\ServiceProfiles\NetworkService\NTUSER.DAT        Disabled
+0xd30c812ef000  \??\C:\Windows\ServiceProfiles\LocalService\NTUSER.DAT  Disabled
+0xd30c81068000  \SystemRoot\System32\Config\BBI Disabled
+0xd30c8290e000  \??\C:\Users\Spongebob\ntuser.dat       Disabled
+0xd30c829bc000  \??\C:\Users\Spongebob\AppData\Local\Microsoft\Windows\UsrClass.dat     Disabled
+0xd30c82ec4000  \??\C:\Windows\AppCompat\Programs\Amcache.hve   Disabled
+0xd30c8335d000  \??\C:\ProgramData\Microsoft\Windows\AppRepository\Packages\MicrosoftWindows.Client.CBS_1000.22638.1000.0_x64__cw5n1h2txyewy\ActivationStore.dat    Disabled
+0xd30c83363000  \??\C:\ProgramData\Microsoft\Windows\AppRepository\Packages\MicrosoftWindows.Client.Core_1000.22634.1000.0_x64__cw5n1h2txyewy\ActivationStore.dat   Disabled
+0xd30c837aa000  \??\C:\ProgramData\Microsoft\Windows\AppRepository\Packages\MicrosoftWindows.Client.WebExperience_422.33900.0.0_x64__cw5n1h2txyewy\ActivationStore.dat      Disabled
+0xd30c83746000  \??\C:\ProgramData\Microsoft\Windows\AppRepository\Packages\Microsoft.Windows.StartMenuExperienceHost_10.0.22621.1_neutral_neutral_cw5n1h2txyewy\ActivationStore.dat        Disabled
+0xd30c8372e000  \??\C:\ProgramData\Microsoft\Windows\AppRepository\Packages\Microsoft.UI.Xaml.CBS_8.2207.29001.0_x64__8wekyb3d8bbwe\ActivationStore.dat Disabled
+0xd30c83752000  \??\C:\ProgramData\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\S-1-5-21-2607170198-3457296929-47938352-1001\SystemAppData\Helium\Cache\32c53033becb93e7.dat        Disabled
+0xd30c8382d000  \??\C:\Users\Spongebob\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\SystemAppData\Helium\User.dat Disabled
+0xd30c83833000  \??\C:\Users\Spongebob\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\SystemAppData\Helium\UserClasses.dat  Disabled
+0xd30c8382f000  \??\C:\ProgramData\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\S-1-5-21-2607170198-3457296929-47938352-1001\SystemAppData\Helium\Cache\32c53033becb93e7_COM15.dat  Disabled
+0xd30c8382b000  \??\C:\ProgramData\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\S-1-5-21-2607170198-3457296929-47938352-1001\SystemAppData\Helium\Cache\32c53033becb93e7.dat        Disabled
+0xd30c8387a000  \??\C:\Users\Spongebob\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\Settings\settings.dat   Disabled
+0xd30c83c04000  \??\C:\Users\Spongebob\AppData\Local\Packages\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\Settings\settings.dat     Disabled
+0xd30c844c9000  \??\C:\ProgramData\Microsoft\Windows\AppRepository\Packages\Microsoft.LockApp_10.0.22621.1_neutral__cw5n1h2txyewy\ActivationStore.dat   Disabled
+0xd30c8478d000  \??\C:\Users\Spongebob\AppData\Local\Packages\Microsoft.LockApp_cw5n1h2txyewy\Settings\settings.dat     Disabled
+0xd30c85769000  \??\C:\ProgramData\Packages\MicrosoftTeams_8wekyb3d8bbwe\S-1-5-21-2607170198-3457296929-47938352-1001\SystemAppData\Helium\Cache\40bd3ca2fdbf90c7.dat       Disabled
+0xd30c85770000  \??\C:\Users\Spongebob\AppData\Local\Packages\MicrosoftTeams_8wekyb3d8bbwe\SystemAppData\Helium\User.dat        Disabled
+0xd30c85773000  \??\C:\Users\Spongebob\AppData\Local\Packages\MicrosoftTeams_8wekyb3d8bbwe\SystemAppData\Helium\UserClasses.dat Disabled
+0xd30c85777000  \REGISTRY\WC\Silo473e083e-55e5-d821-d184-ff10eec909f2com        Disabled
+0xd30c85779000  \??\C:\ProgramData\Packages\MicrosoftTeams_8wekyb3d8bbwe\S-1-5-21-2607170198-3457296929-47938352-1001\SystemAppData\Helium\Cache\40bd3ca2fdbf90c7.dat       Disabled
+0xd30c857c0000  \??\C:\Users\Spongebob\AppData\Local\Packages\MicrosoftTeams_8wekyb3d8bbwe\Settings\settings.dat        Disabled
+0xd30c864ce000  \??\C:\ProgramData\Packages\Microsoft.WindowsNotepad_8wekyb3d8bbwe\S-1-5-21-2607170198-3457296929-47938352-1001\SystemAppData\Helium\Cache\f419515036ec443c.dat     Disabled
+0xd30c864c1000  \??\C:\Users\Spongebob\AppData\Local\Packages\Microsoft.WindowsNotepad_8wekyb3d8bbwe\SystemAppData\Helium\User.dat      Disabled
+0xd30c864c3000  \??\C:\Users\Spongebob\AppData\Local\Packages\Microsoft.WindowsNotepad_8wekyb3d8bbwe\SystemAppData\Helium\UserClasses.dat       Disabled
+0xd30c86503000  \??\C:\ProgramData\Packages\Microsoft.WindowsNotepad_8wekyb3d8bbwe\S-1-5-21-2607170198-3457296929-47938352-1001\SystemAppData\Helium\Cache\f419515036ec443c_COM15.dat       Disabled
+0xd30c86505000  \??\C:\ProgramData\Packages\Microsoft.WindowsNotepad_8wekyb3d8bbwe\S-1-5-21-2607170198-3457296929-47938352-1001\SystemAppData\Helium\Cache\f419515036ec443c.dat     Disabled
+0xd30c8652b000  \??\C:\ProgramData\Microsoft\Windows\AppRepository\Packages\Microsoft.WindowsNotepad_11.2112.32.0_x64__8wekyb3d8bbwe\ActivationStore.dat   Disabled
+0xd30c8638c000  \??\C:\ProgramData\Microsoft\Windows\AppRepository\Packages\Microsoft.UI.Xaml.2.7_7.2208.15002.0_x64__8wekyb3d8bbwe\ActivationStore.dat Disabled
+0xd30c7db75000  \??\C:\Windows\ServiceProfiles\NetworkService\AppData\Local\Microsoft\Windows\DeliveryOptimization\State\dosvcState.dat Disabled
+0xd30c86712000  \??\C:\ProgramData\Microsoft\Windows\AppRepository\Packages\windows.immersivecontrolpanel_10.0.6.1000_neutral_neutral_cw5n1h2txyewy\ActivationStore.dat     Disabled
