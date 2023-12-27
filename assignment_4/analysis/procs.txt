@@ -15,7 +15,7 @@ PID     PPID    ImageFileName   Offset(V)       Threads Handles SessionId       
 424     772     svchost.exe     0x9f0f27b1b140  12      -       0       False   2023-01-09 21:47:16.000000      N/A    Disabled
 536     772     svchost.exe     0x9f0f27c31080  5       -       0       False   2023-01-09 21:47:16.000000      N/A    Disabled
 852     736     LogonUI.exe     0x9f0f27caf080  0       -       1       False   2023-01-09 21:47:16.000000      2023-01-09 21:47:33.000000      Disabled
-920     736     dwm.exe 0x9f0f27cb1080  16      -       1       False   2023-01-09 21:47:16.000000      N/A     Disabled
+920     736     dwm.exe         0x9f0f27cb1080  16      -       1       False   2023-01-09 21:47:16.000000      N/A     Disabled
 1088    772     svchost.exe     0x9f0f27ccf0c0  9       -       0       False   2023-01-09 21:47:16.000000      N/A    Disabled
 1100    772     svchost.exe     0x9f0f27cdb080  2       -       0       False   2023-01-09 21:47:16.000000      N/A    Disabled
 1208    772     svchost.exe     0x9f0f27e30080  5       -       0       False   2023-01-09 21:47:16.000000      N/A    Disabled
@@ -165,7 +165,7 @@ PID     PPID    ImageFileName   Offset(V)       Threads Handles SessionId       
 4192    7300    firefox.exe     0x9f0f2bb4f080  4       -       1       False   2023-01-09 21:49:50.000000      N/A    Disabled
 472     7300    firefox.exe     0x9f0f275e6080  16      -       1       False   2023-01-09 21:49:50.000000      N/A    Disabled
 3652    7300    firefox.exe     0x9f0f29969080  16      -       1       False   2023-01-09 21:49:50.000000      N/A    Disabled
-3108    7300    tor.exe 0x9f0f2c2d2080  2       -       1       False   2023-01-09 21:49:51.000000      N/A     Disabled
+3108    7300    tor.exe         0x9f0f2c2d2080  2       -       1       False   2023-01-09 21:49:51.000000      N/A     Disabled
 3772    3108    conhost.exe     0x9f0f28558080  2       -       1       False   2023-01-09 21:49:51.000000      N/A    Disabled
 6472    7300    firefox.exe     0x9f0f276e60c0  16      -       1       False   2023-01-09 21:50:04.000000      N/A    Disabled
 11212   7300    firefox.exe     0x9f0f29b98080  15      -       1       False   2023-01-09 21:50:31.000000      N/A    Disabled
@@ -192,6 +192,6 @@ PID     PPID    ImageFileName   Offset(V)       Threads Handles SessionId       
 5640    6076    SearchProtocol  0x9f0f2856c080  9       -       0       False   2023-01-09 22:15:14.000000      N/A    Disabled
 11252   772     svchost.exe     0x9f0f29cc80c0  6       -       0       False   2023-01-09 22:15:27.000000      N/A    Disabled
 6656    2132    audiodg.exe     0x9f0f285c8080  8       -       0       False   2023-01-09 22:15:30.000000      N/A    Disabled
-9448    4108    cmd.exe 0x9f0f2c2d0080  2       -       1       False   2023-01-09 22:15:31.000000      N/A     Disabled
+9448    4108    cmd.exe         0x9f0f2c2d0080  2       -       1       False   2023-01-09 22:15:31.000000      N/A     Disabled
 10296   9448    conhost.exe     0x9f0f2b1b0080  6       -       1       False   2023-01-09 22:15:31.000000      N/A    Disabled
 99254272        0               0x9f0f248130c0  4096    -       -       True    -       -       Disabled
