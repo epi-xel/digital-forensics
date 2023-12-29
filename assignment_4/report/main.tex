@@ -42,7 +42,11 @@
 
 \maketitle
 
-\section{Background}
+\section{Factual part}
+
+\subsection{Background}
+
+\subsubsection{Case description}
 
 This analysis is divided into two parts: 
 \begin{enumerate}
@@ -50,23 +54,56 @@ This analysis is divided into two parts:
         \item Analysis of a RAM dump sent by an unknown source
 \end{enumerate}
 
-\section{Factual part}
-
 \subsubsection{Software and hardware specifications}
 \label{sec:specs}
 
 For this analysis, I utilized the following software:
 
 \begin{itemize}
-    \item \textbf{Volatility} \cite{volatility} to analyze the RAM dump.
-    \item \textbf{???} \cite{???} to acquire the RAM dump.
+    \item \textbf{Volatility} \cite{volatility} -- version 2.5.2; to analyze the RAM dump.
+    \item \textbf{WinPmem} \cite{winpmem} to acquire the RAM dump.
 \end{itemize}
 
-\subsection{Acquisition}
+\subsection{Analysis of the choosen RAM dump}
 
-First of all, I had to acquire a RAM dump.
+\subsubsection{Preprocessing and acquisition}
 
-%% TODO: insert here first part analysis
+First, I created a virtual machine with Windows 7. To make the image unique, I created a simple application called \textit{digitalForensic} in Powershell and I executed it. 
+
+Then I installed WinPmem and I acquired the RAM dump. The SHA-256 of \texttt{physmem.raw} is:\\
+\texttt{32706ABA85866D8FA8726658B223AB497FD5BBFC1E42D53049567680A36078B7}
+
+\subsubsection{Analysis}
+
+Once I acquired the RAM dump, I used Volatility to analyze it. First I listed the processes running at the time of the dump. The results are shown in Figure \ref{fig:pslist}. Then I scanned for processes, as shown in Figure \ref{fig:psscan}.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/pslist.png}
+        \caption{List of processes.}
+        \label{fig:pslist}
+\end{figure}
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/psscan.png}
+        \caption{Scanning for processes.}
+        \label{fig:psscan}
+\end{figure}
+
+You can see highlighted in blue the process \textbf{digitalForensic.exe}, which is the one I created. 
+
+We can notice that scanning and listing processes gives different results. This is because \texttt{pslist} only lists processes that are in the \textit{EPROCESS} structure, while \texttt{psscan} scans the physical memory for the \textit{EPROCESS} structure. This means that \texttt{psscan} can find processes that are not in the \textit{EPROCESS} structure, such as terminated processes. 
+
+Finally, I listed the network connections, as shown in Figure \ref{fig:netscan}.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/netscan.png}
+        \caption{List of network connections.}
+        \label{fig:netscan}
+\end{figure}
+
 
 \subsection{Analysis of the unknown RAM dump}
 
@@ -107,7 +144,15 @@ First of all, I checked the basic information about the RAM dump, such as the op
 
 \subsubsection{Processes}
 
-I looked for the processes running at the time of the dump:
+I looked for the processes running at the time of the dump (you can see some of them in Figure \ref{fig:bobps}):
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/bobps.png}
+        \caption{List of processes.}
+        \label{fig:bobps}
+\end{figure}
+
 
 \begin{enumerate}
 \item \textbf{System} (PID 4)
@@ -188,8 +233,32 @@ I looked for the processes running at the time of the dump:
 
 \subsubsection{Network connections}
 
+I scanned for network connections: the results are shown in Figure \ref{fig:netstat}.
+
+\begin{figure}[!ht]
+        \centering
+        \begin{subfigure}[b]{\textwidth}
+            \centering
+                \includegraphics[width=\textwidth]{images/bobnet1.png}
+        \end{subfigure}
+        \begin{subfigure}[b]{\textwidth}
+            \centering
+                \includegraphics[width=\textwidth]{images/bobnet2.png}
+        \end{subfigure}
+        \caption{Network connections.}
+        \label{fig:bobnet}
+\end{figure}
+
 \subsubsection{SID}
 
+I looked for the SIDs: you can see some of them in Figure \ref{fig:sid}.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/sids.png}
+        \caption{SID of the user.}
+        \label{fig:sid}
+\end{figure}
 
 \section{Expert testimony}
 
